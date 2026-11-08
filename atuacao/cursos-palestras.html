@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursos e palestras | Schnorr &amp; Advogados Associados</title>
+<meta name="description" content="Cursos, treinamentos e palestras do escritório para empresas, produtores rurais e equipes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+.photo-grid{display:grid;grid-template-columns:1fr;gap:20px;margin:42px 0 0}
+@media(min-width:768px){.photo-grid{grid-template-columns:1fr 1fr;gap:24px}}
+.photo-grid figure{margin:0}
+.photo-grid img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border:1px solid rgba(201,162,39,.25)}
+.photo-caption{margin:18px 0 0;font-size:14px;color:#B9B5AB}
+.back-link{display:block;margin:48px 0 0}
+</style>
+</head>
+<body>
+<div class="schnorr">
+<header class="masthead">
+<a href="/" aria-label="Página inicial"><img class="logo" data-img="logo" alt="Schnorr &amp; Advogados Associados"></a>
+<nav aria-label="Navegação principal"><a href="/#atuacao">Atuação</a><a href="/#materiais">Materiais</a><a href="/#escritorio">Escritório</a><a href="/#publicacoes">Publicações</a><a href="/#contato">Contato</a><a href="https://cliente.advschnorr.com.br">Cliente <span aria-hidden="true">↗</span></a></nav>
+</header>
+<section class="section">
+<p class="eyebrow">ATUAÇÃO · 07</p>
+<h2>Cursos e palestras</h2>
+<p class="section-intro">Cursos, treinamentos e palestras conduzidos pelo escritório para empresas, produtores rurais e equipes, com temas trabalhistas e de prevenção.</p>
+<div class="photo-grid">
+<figure><img src="palestra1-plateia.jpg" alt="Plateia em palestra para produtores rurais no auditório do Sindicato dos Produtores" loading="lazy" decoding="async"></figure>
+<figure><img src="palestra2-palco.jpg" alt="Palco de palestra em auditório durante apresentação do escritório" loading="lazy" decoding="async"></figure>
+<figure><img src="curso1-sala.jpg" alt="Turma em curso presencial conduzido pelo escritório" loading="lazy" decoding="async"></figure>
+<figure><img src="curso2-sala.jpg" alt="Instrutor em sala durante curso para equipes" loading="lazy" decoding="async"></figure>
+</div>
+<p class="photo-caption">Registros de cursos e palestras do escritório.</p>
+<a class="section-contact" href="https://wa.me/5574991326055">Falar com o escritório <span aria-hidden="true">↗</span></a>
+<a class="back-link quiet" href="/#atuacao">← Voltar para Atuação</a>
+</section>
+<footer>Schnorr &amp; Advogados Associados · Advocacia empresarial preventiva e estratégica. Conteúdo institucional. Cada caso exige análise jurídica própria.</footer>
+</div>
+<script src="../img1.js"></script>
+<script src="../img2.js"></script>
+<script src="../img3.js"></script>
+<script>
+(function(){
+ var imgs = window.__IMG || {};
+ document.querySelectorAll('img[data-img]').forEach(function(el){ var u = imgs[el.getAttribute('data-img')]; if (u) el.src = u; });
+})();
+</script>
+</body>
+</html>
