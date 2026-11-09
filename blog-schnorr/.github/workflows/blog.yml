@@ -1,0 +1,51 @@
+name: Testar e publicar blog
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Regera o site diariamente para disponibilizar os artigos já revisados e agendados.
+    - cron: '0 7 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: blog-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v6
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Testar validação e geração
+        run: python -m unittest discover -s tests -v
+      - name: Gerar versão de produção
+        run: python scripts/build.py
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Preparar arquivos do site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
