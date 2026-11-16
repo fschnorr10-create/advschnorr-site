@@ -31,3 +31,12 @@ h2{font-size:clamp(28px,3vw,39px);margin:35px 0 12px}
 .site-footer{border-top:1px solid var(--line);padding:28px 24px;color:var(--muted);font-size:12px}
 .site-footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:0}
 @media(max-width:720px){.site-nav{flex-wrap:wrap;gap:12px 18px}.brand{width:100%}.brand img{width:170px}.intro{padding-top:48px}.post-card{padding:24px}}
+
+/* Aquarelas temáticas: identidade editorial Schnorr */
+.article{position:relative}
+.article .aq-hero{position:absolute;top:-6px;right:0;width:min(460px,58vw);height:auto;opacity:.6;pointer-events:none;z-index:0}
+.article>*:not(.aq){position:relative;z-index:1}
+.post-card{position:relative;overflow:hidden}
+.post-card .aq-card{position:absolute;top:50%;right:0;transform:translateY(-50%);width:230px;height:auto;opacity:.4;pointer-events:none;z-index:0}
+.post-card>*:not(.aq){position:relative;z-index:1}
+@media(max-width:720px){.article .aq-hero{width:min(300px,70vw);opacity:.5}.post-card .aq-card{width:150px;opacity:.3}}
