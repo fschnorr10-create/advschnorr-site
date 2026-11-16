@@ -40,3 +40,14 @@ h2{font-size:clamp(28px,3vw,39px);margin:35px 0 12px}
 .post-card .aq-card{position:absolute;top:50%;right:0;transform:translateY(-50%);width:230px;height:auto;opacity:.4;pointer-events:none;z-index:0}
 .post-card>*:not(.aq){position:relative;z-index:1}
 @media(max-width:720px){.article .aq-hero{width:min(300px,70vw);opacity:.5}.post-card .aq-card{width:150px;opacity:.3}}
+
+/* Links sem seta: destaque no hover sem deslocar o layout + microinterações */
+a{transition:color .18s ease}
+.site-nav>a:not(.brand):hover{color:var(--gold)}
+.article a:hover{text-decoration:underline;text-underline-offset:3px}
+.post-card{transition:border-color .22s ease,transform .22s ease,box-shadow .22s ease}
+.post-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #0007}
+.post-card h2{transition:color .22s ease}
+.post-card:hover h2{color:var(--gold)}
+.post-card .more:hover{text-decoration:underline;text-underline-offset:4px}
+@media(prefers-reduced-motion:reduce){.post-card:hover{transform:none}}
