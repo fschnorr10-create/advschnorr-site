@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: unzip -o _pub/pat-upload.zip -d . && rm -rf _pub
+      - run: unzip -o _pub/1-pat-upload.zip -d . && rm -rf _pub
       - run: |
           git config user.name "fschnorr10-create"
           git config user.email "fschnorr10-create@users.noreply.github.com"
