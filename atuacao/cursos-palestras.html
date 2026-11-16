@@ -17,12 +17,31 @@
 .photo-caption{margin:18px 0 0;font-size:14px;color:#B9B5AB}
 .back-link{display:block;margin:48px 0 0}
 </style>
+<style id="menu-site-css">
+.masthead{position:relative}
+.masthead nav{align-items:center}
+.navmenu{position:relative;padding-block:8px}
+.navmenu-btn{background:none;border:0;padding:0;color:#f4f1e9;font-family:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;min-height:44px}
+.navmenu-caret{font-size:10px;color:#C9A44A}
+.navmenu-panel{position:absolute;top:100%;right:0;width:min(880px,92vw);background:#101010;border:1px solid #C9A44A40;box-shadow:0 18px 40px #000a;padding:24px 28px;display:none;z-index:40;text-align:left}
+.navmenu:hover .navmenu-panel,.navmenu.open .navmenu-panel{display:block}
+.navmenu-title{color:#C9A44A}
+.navmenu-col a{color:#ede9df;border-bottom:1px solid #ffffff0f}
+.navmenu-col a:hover{color:#e2c68e}
+.navmenu-soon{color:#97917f;border-bottom:1px solid #ffffff0f}
+@media(max-width:430px){.navmenu{position:static}.navmenu-panel{left:0;right:0;width:auto;max-height:76vh;overflow-y:auto}}
+.masthead .navmenu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 36px}
+.navmenu-title{margin:0 0 8px;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;font-weight:600}
+.navmenu-col a{display:block;padding:6px 0;font-size:13px;line-height:1.45;text-decoration:none}
+.navmenu-soon{display:block;padding:6px 0;font-size:13px;line-height:1.45;font-style:italic}
+@media(max-width:1000px){.masthead .navmenu-grid{grid-template-columns:1fr 1fr;gap:18px 28px}}
+@media(max-width:560px){.masthead .navmenu-grid{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <div class="schnorr">
 <header class="masthead">
 <a href="/" aria-label="Página inicial"><img class="logo" data-img="logo" alt="Schnorr &amp; Advogados Associados"></a>
-<nav aria-label="Navegação principal"><a href="/#atuacao">Atuação</a><a href="/#materiais">Materiais</a><a href="/#escritorio">Escritório</a><a href="/#publicacoes">Publicações</a><a href="/#contato">Contato</a><a href="https://cliente.advschnorr.com.br">Cliente <span aria-hidden="true">↗</span></a></nav>
+<nav aria-label="Navegação principal"><div class="navmenu" id="navmenu"><button type="button" class="navmenu-btn" id="navmenu-btn" aria-expanded="false" aria-controls="navmenu-panel" aria-haspopup="true">Menu <span class="navmenu-caret" aria-hidden="true">▾</span></button><div class="navmenu-panel" id="navmenu-panel"><div class="navmenu-grid"><div class="navmenu-col"><p class="navmenu-title">Quem somos</p><a href="/#escritorio">O escritório</a><a href="/#fundador">Fábio Schnorr</a><a href="/#parcerias">Parcerias estratégicas</a></div><div class="navmenu-col"><p class="navmenu-title">Área de Atuação</p><a href="/#atuacao">Conheça as 8 áreas</a></div><div class="navmenu-col"><p class="navmenu-title">Valores</p><a href="/#valores">Vídeo institucional</a></div><div class="navmenu-col"><p class="navmenu-title">Serviços</p><a href="/atuacao/compliance.html">Auditoria e compliance trabalhista</a><a href="/atuacao/cursos-palestras.html">Cursos e palestras</a></div><div class="navmenu-col"><p class="navmenu-title">Aplicativos</p><a href="https://simulador5x2.advschnorr.com.br/">Simulador 5 × 2 ↗</a><a href="https://dimensionamento.advschnorr.com.br/">Dimensiona SST ↗</a><a href="/calculadora.html">Calculadora de Trintídio</a><a href="https://manualdoprodutor.advschnorr.com.br/">Manual do Produtor Rural ↗</a></div><div class="navmenu-col"><p class="navmenu-title">Livros</p><a href="https://www.editorajuspodivm.com.br/saraiva-schnorr-clt-consolidacao-das-leis-do-trabalho-completa-2026">CLT Completa 2026 (Juspodivm) ↗</a><span class="navmenu-soon">Compliance Trabalhista (ebook Kindle)</span><span class="navmenu-soon">A CLT Está Morrendo (em breve na Amazon)</span><a href="https://drive.google.com/file/d/1OrhcGwJ1DDz3daC2WlY70XvLBRl56oPk/view">Crédito Rural no Brasil (gratuito) ↗</a><a href="https://drive.google.com/file/d/157jRZqsj0kf850OmnXloZw4djH96H3vl/view">Guia Prático da Escala 5x2 (gratuito) ↗</a><a href="https://drive.google.com/file/d/16s1yvgBPiTuLSFHr3JGKN0oJAm_f3Tb1/view">Manual Cota de PcD (gratuito) ↗</a><a href="https://drive.google.com/file/d/1Nv4EvLuU-GrOaqyjJT_5qZRvYNahgs56/view">Manual Cota de Aprendizagem (gratuito) ↗</a></div></div></div></div><a href="/blog/">Blog</a><a href="https://cliente.advschnorr.com.br">Área do cliente <span aria-hidden="true">↗</span></a><a href="/#contato">Contato</a></nav>
 </header>
 <section class="section">
 <p class="eyebrow">ATUAÇÃO · 07</p>
@@ -52,6 +71,9 @@
  var imgs = window.__IMG || {};
  document.querySelectorAll('img[data-img]').forEach(function(el){ var u = imgs[el.getAttribute('data-img')]; if (u) el.src = u; });
 })();
+</script>
+<script>
+(function(){var w=document.getElementById('navmenu'),b=document.getElementById('navmenu-btn');if(!w||!b)return;b.addEventListener('click',function(e){e.stopPropagation();var o=w.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});document.addEventListener('click',function(e){if(!w.contains(e.target)){w.classList.remove('open');b.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',function(e){if(e.key==='Escape'){w.classList.remove('open');b.setAttribute('aria-expanded','false')}});w.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){w.classList.remove('open');b.setAttribute('aria-expanded','false')})});})();
 </script>
 </body>
 </html>
