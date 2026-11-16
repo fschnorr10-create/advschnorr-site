@@ -23,3 +23,5 @@ jobs:
           git add -A
           git commit -m "Publica menu na home, assets e pagina de assinaturas" || echo "sem mudancas"
           git push
+
+# reexecucao 2
